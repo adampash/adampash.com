@@ -25,7 +25,7 @@ config :adam_pash, AdamPash.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
-  
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
