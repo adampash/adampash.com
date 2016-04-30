@@ -13,21 +13,6 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <script type="text/javascript">
     var init = function() {
-      var randomClass = function() {
-        var classes = [
-          "blue", "red", "maroon", "pink", "gold", "green", "eggplant",
-          "heather", "purple", "moss",
-        ]
-        return classes[Math.floor(Math.random()*classes.length)]
-      }
-      var changeColor = function() {
-        var currentColor = document.body.className
-        var newColor = randomClass()
-        if (newColor === currentColor) return changeColor()
-        document.body.className = newColor
-        clearSelection()
-        return false
-      }
       var clearSelection = function() {
         if(document.selection && document.selection.empty) {
           document.selection.empty()
@@ -37,17 +22,14 @@
         }
       }
 
-      changeColor()
       setTimeout(function () {
         var dek = document.getElementsByClassName('dek')[0]
         if (dek) dek.setAttribute('style', 'background: inherit;')
 
         var links = document.getElementsByClassName('links')[0]
         if (links) links.setAttribute('style', 'opacity: 1;')
-      }, 1700)
+      }, 1300)
 
-      var name = document.getElementsByClassName('name')[0]
-      if (name) name.onclick = changeColor
     }
     window.onload = function() {
       init()
@@ -58,7 +40,7 @@
 
 <body>
   <div class="dek">
-    I'm <span class="highlight name">Adam Pash</span>, a
+    I'm <span class="highlight">Adam Pash</span>, a
     <a href="https://github.com/adampash/" target="_blank">
       <span class="highlight">developer</span>
     </a>
