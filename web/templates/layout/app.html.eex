@@ -1,22 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Adam Pash">
 
-    <title>Hello AdamPash!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  </head>
+  <title>Adam Pash</title>
+  <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  <script src="https://use.typekit.net/mtz6tca.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script type="text/javascript">
+    var init = function() {
+      var randomClass = function() {
+        var classes = [
+          "blue", "red", "maroon", "pink", "gold", "green", "eggplant",
+          "heather", "purple", "moss",
+        ]
+        return classes[Math.floor(Math.random()*classes.length)]
+      }
+      var changeColor = function() {
+        var currentColor = document.body.className
+        var newColor = randomClass()
+        if (newColor === currentColor) return changeColor()
+        document.body.className = newColor
+        clearSelection()
+        return false
+      }
+      var clearSelection = function() {
+        if(document.selection && document.selection.empty) {
+          document.selection.empty()
+        } else if(window.getSelection) {
+          var sel = window.getSelection()
+          sel.removeAllRanges()
+        }
+      }
 
-  <body>
-    <div id="root"></div>
-    <%= if Mix.env == :dev do %>
-      <script src='http://localhost:4001/index.bundle.js'></script>
-    <% else %>
-      <script src="<%= static_path(@conn, "/js/index.bundle.js") %>"></script>
-    <% end %>
-  </body>
+      changeColor()
+      setTimeout(function () {
+        var dek = document.getElementsByClassName('dek')[0]
+        if (dek) dek.setAttribute('style', 'background: inherit;')
+
+        var links = document.getElementsByClassName('links')[0]
+        if (links) links.setAttribute('style', 'opacity: 1;')
+      }, 1700)
+
+      var name = document.getElementsByClassName('name')[0]
+      if (name) name.onclick = changeColor
+    }
+    window.onload = function() {
+      init()
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class="dek">
+    I'm <span class="highlight name">Adam Pash</span>, a
+    <a href="https://github.com/adampash/" target="_blank">
+      <span class="highlight">developer</span>
+    </a>
+    and
+    <a href="http://lifehacker.com" target="_blank">
+      <span class="highlight">writer.</span>
+    </a>
+    I was formerly the editor-in-chief of
+    <a href="http://lifehacker.com" target="_blank">
+      <span class="highlight">Lifehacker,</span>
+    </a>
+    but I've also written
+    <a href="http://www.amazon.com/Adam-Pash/e/B001JRYOY6/" target="_blank">
+      <span class="highlight">a few books</span>
+    </a>
+    and for a number of other publications (Wired, Popular Science, PC World).
+    Above all else, I love making things. I'm currently building things with code
+    at
+    <a href="http://gawkermedia.com" target="_blank">
+      <span class="highlight">Gawker Media,</span>
+    </a>
+    focusing on tools that streamline and augment the editorial process.
+    In my spare time, I make things like
+    <a href="https://andtheniwaslike.co" target="_blank">
+      <span class="highlight">this</span>
+    </a>
+    for fun.
+  </div>
+  <ul class="links highlight">
+    <li>
+      email:
+      <a href="mailto:adam.pash@gmail.com" target="_blank">adam.pash@gmail.com</a>
+    </li>
+    <li>
+      twitter: <a href="https://twitter.com/adampash" target="_blank">@adampash</a>
+    </li>
+    <li>
+      <a href="https://github.com/adampash/" target="_blank">github.com/adampash</a>
+    </li>
+  </ul>
+
+  <%= if Mix.env == :dev do %>
+  <script src='http://localhost:4001/index.bundle.js'></script>
+  <% else %>
+  <script src="<%= static_path(@conn, "/js/index.bundle.js") %>"></script>
+  <% end %>
+</body>
 </html>
