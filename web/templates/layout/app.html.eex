@@ -83,7 +83,7 @@
   </ul>
 
   <%= if Mix.env == :dev do %>
-  <script src='http://localhost:4001/index.bundle.js'></script>
+  <script src='http://localhost:4001/js/index.bundle.js'></script>
   <% else %>
   <script src="<%= static_path(@conn, "/js/index.bundle.js") %>"></script>
   <% end %>

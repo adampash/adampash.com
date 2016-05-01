@@ -36,6 +36,7 @@ defmodule AdamPash.Web do
 
       import AdamPash.Router.Helpers
       import AdamPash.Gettext
+      import Cache, only: [cache: 2]
     end
   end
 
