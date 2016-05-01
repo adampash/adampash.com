@@ -1,7 +1,7 @@
 // Phoenix' dependencies
 // import '../../../deps/phoenix_html/priv/static/phoenix_html'
 // import { Socket } from 'phoenix'
-// import '../css/app.scss'
+import '../css/app.scss'
 //
 // import React, { Component } from 'react'
 // // import { ContentState, convertToRaw, convertFromRaw } from 'draft-js'
