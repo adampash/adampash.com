@@ -40,7 +40,7 @@
 
 <body>
   <div class="dek">
-    I'm <span class="highlight">Adam Pash</span>, a
+    I'm Adam Pash, a
     <a href="https://github.com/adampash/" target="_blank">
       <span class="highlight">developer</span>
     </a>
@@ -56,7 +56,14 @@
     <a href="http://www.amazon.com/Adam-Pash/e/B001JRYOY6/" target="_blank">
       <span class="highlight">a few books</span>
     </a>
-    and for a number of other publications (Wired, Popular Science, PC World).
+    and for a number of other publications
+    <span class="highlight">(</span><a href="http://www.wired.com/" target="_blank"><span class="highlight">Wired,</span>
+    </a>
+    <a href="http://www.popsci.com/" target="_blank">
+      <span class="highlight">Popular Science,</span>
+    </a>
+    <a href="http://www.pcworld.com/" target="_blank">
+      <span class="highlight">PC World</span></a>).
     Above all else, I love making things. I'm currently building things with code
     at
     <a href="http://gawkermedia.com" target="_blank">
@@ -71,7 +78,6 @@
   </div>
   <ul class="links highlight">
     <li>
-      email:
       <a href="mailto:adam.pash@gmail.com" target="_blank">adam.pash@gmail.com</a>
     </li>
     <li>
