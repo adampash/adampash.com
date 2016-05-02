@@ -1,6 +1,5 @@
 @import 'font_smoothing';
 
-$black: #2e2a25;
 $blue: #1e252b;
 $gray: #5c6670;
 $white: #dfd8d8;
@@ -43,6 +42,7 @@ body {
   margin: 0 0 120px;
   padding: 37px 48px 30px;
   position: relative;
+  transition: opacity .6s;
   z-index: 1000;
 }
 

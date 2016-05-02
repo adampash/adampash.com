@@ -8,37 +8,17 @@
   <meta name="author" content="Adam Pash">
 
   <title>Adam Pash</title>
-  <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  <!-- <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>"> -->
   <script src="https://use.typekit.net/mtz6tca.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-  <script type="text/javascript">
-    var init = function() {
-      var clearSelection = function() {
-        if(document.selection && document.selection.empty) {
-          document.selection.empty()
-        } else if(window.getSelection) {
-          var sel = window.getSelection()
-          sel.removeAllRanges()
-        }
-      }
+  <style>
+    .links,.dek{opacity:0;}
+  </style>
 
-      setTimeout(function () {
-        var dek = document.getElementsByClassName('dek')[0]
-        if (dek) dek.setAttribute('style', 'background: inherit;')
-
-        var links = document.getElementsByClassName('links')[0]
-        if (links) links.setAttribute('style', 'opacity: 1;')
-      }, 1300)
-
-    }
-    window.onload = function() {
-      init()
-    }
-  </script>
 
 </head>
 
-<body>
+<body style="background: #1e252b;">
   <div class="dek">
     I'm Adam Pash, a
     <a href="https://github.com/adampash/" target="_blank">
@@ -88,10 +68,47 @@
     </li>
   </ul>
 
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" type="text/css" href="/css/app.css"/>
+  </noscript>
+
   <%= if Mix.env == :dev do %>
-  <script src='http://localhost:4001/js/index.bundle.js'></script>
-  <% else %>
-  <script src="<%= static_path(@conn, "/js/index.bundle.js") %>"></script>
+    <script src='http://localhost:4001/js/index.bundle.js'></script>
   <% end %>
+  <script>
+    var loadDeferredStyles = function() {
+      var addStylesNode = document.getElementById("deferred-styles");
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement)
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var init = function() {
+      loadDeferredStyles()
+      var dek = document.getElementsByClassName('dek')[0]
+      if (dek) dek.setAttribute('style', 'opacity: 1;')
+      var clearSelection = function() {
+        if(document.selection && document.selection.empty) {
+          document.selection.empty()
+        } else if(window.getSelection) {
+          var sel = window.getSelection()
+          sel.removeAllRanges()
+        }
+      }
+
+      setTimeout(function () {
+        var dek = document.getElementsByClassName('dek')[0]
+        if (dek) dek.setAttribute('style', 'opacity: 1; background: inherit;')
+
+        var links = document.getElementsByClassName('links')[0]
+        if (links) links.setAttribute('style', 'opacity: 1;')
+      }, 1300)
+    }
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(function() { window.setTimeout(init, 0); });
+    else window.addEventListener('load', init);
+  </script>
+
 </body>
 </html>
