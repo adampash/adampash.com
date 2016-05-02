@@ -8,11 +8,8 @@
   <meta name="author" content="Adam Pash">
 
   <title>Adam Pash</title>
-  <!-- <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>"> -->
-  <script src="https://use.typekit.net/mtz6tca.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <style>
-    .links,.dek{opacity:0;}
+    .links{opacity:0;}
   </style>
 
 
@@ -75,6 +72,8 @@
   <%= if Mix.env == :dev do %>
     <script src='http://localhost:4001/js/index.bundle.js'></script>
   <% end %>
+  <script src="https://use.typekit.net/mtz6tca.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <script>
     var loadDeferredStyles = function() {
       var addStylesNode = document.getElementById("deferred-styles");
@@ -101,7 +100,7 @@
         if (dek) dek.setAttribute('style', 'opacity: 1; background: inherit;')
 
         var links = document.getElementsByClassName('links')[0]
-        if (links) links.setAttribute('style', 'opacity: 1;')
+        if (links) links.setAttribute('style', 'opacity: 1; bottom: 50px;')
       }, 1300)
     }
     var raf = requestAnimationFrame || mozRequestAnimationFrame ||

@@ -22,7 +22,7 @@ body {
 }
 
 .links {
-  bottom: 50px;
+  bottom: -50px;
   color: $gray;
   font-size: 24px;
   left: 50px;
@@ -31,7 +31,7 @@ body {
   opacity: 0;
   padding: 0;
   position: fixed;
-  transition: opacity .8s;
+  transition: bottom 1s;
   z-index: 10;
 }
 
