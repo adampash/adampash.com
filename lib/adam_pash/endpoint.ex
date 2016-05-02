@@ -10,7 +10,8 @@ defmodule AdamPash.Endpoint do
   plug Plug.Static,
     at: "/", from: :adam_pash, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt
-            assets javascripts keybase.txt related-widget)
+            assets javascripts keybase.txt related-widget
+            now_and_then)
             # related-widget/build/app.css related-widget/build/global.js)
 
   # Code reloading can be explicitly enabled under the

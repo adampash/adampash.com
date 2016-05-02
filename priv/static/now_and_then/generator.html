@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Compare images</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <label>First image:</label>
+      <input type="text" id="img1" name="img1" />
+      <br />
+      <label>Second image:</label>
+      <input type="text" id="img2" name="img2" />
+      <br />
+      <label>Slider starting point (%):</label>
+      <input type="number" id="start-position" name="start-position" value="50" />
+      <label>Slider color: </label>
+      <input type="radio" name="color" value="white" checked="checked">White
+      <input type="radio" name="color" value="black">Black
+      <input type="radio" name="color" value="red">Red
+      <textarea id="embed" class="embed" style=""></textarea>
+      <h5>Preview</h5>
+      <div class="preview"></div>
+      <!-- <div class="url"><a href="#"></a></div> -->
+      <script src="generator.js"></script>
+    </div>
+  </body>
+</html>
