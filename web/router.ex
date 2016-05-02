@@ -17,6 +17,7 @@ defmodule AdamPash.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/related-widget/build", BlogController, :related
     get ":blog_post", BlogController, :show
   end
 
