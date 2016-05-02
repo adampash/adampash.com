@@ -9,7 +9,8 @@
 
   <title>Adam Pash</title>
   <style>
-    .links{opacity:0;}
+    .links,.dek{opacity:0;}
+    .dek{transition: opacity .6s;}
   </style>
 
 
