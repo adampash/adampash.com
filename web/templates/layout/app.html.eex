@@ -73,8 +73,6 @@
   <%= if Mix.env == :dev do %>
     <script src='http://localhost:4001/js/index.bundle.js'></script>
   <% end %>
-  <script src="https://use.typekit.net/mtz6tca.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <script>
     var loadDeferredStyles = function() {
       var addStylesNode = document.getElementById("deferred-styles");
@@ -109,6 +107,7 @@
     if (raf) raf(function() { window.setTimeout(init, 0); });
     else window.addEventListener('load', init);
   </script>
-
+  <script src="https://use.typekit.net/mtz6tca.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </body>
 </html>
