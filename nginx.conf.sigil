@@ -6,6 +6,7 @@ server {
   access_log  /var/log/nginx/{{ .APP }}-access.log;
   error_log   /var/log/nginx/{{ .APP }}-error.log;
 
+  # TESTINGGGGGGGGGG
   # return 301 https://$host:443$request_uri;
 }
 server {
